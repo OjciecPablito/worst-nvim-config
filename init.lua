@@ -310,7 +310,6 @@ require('lazy').setup({
         },
       }
     end,
-    require("custom/keymaps")
     -- vim.keymap.set("n", "<leader>f", "NvimTreeFocus", {desc="NvimTreeFocus"}),
     -- vim.keymap.set("n", "tt", "NvimTreeToggle")
   }
