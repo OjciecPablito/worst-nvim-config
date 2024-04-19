@@ -9,6 +9,14 @@ function nmap(keymap, origin_key, description)
         vim.keymap.set("n", keymap, origin_key .. "<CR>", {silent=true})
     end
 end
+function imap(keymap, origin_key, description)
+    if description then
+
+        vim.keymap.set("i", keymap, origin_key .. "<CR>", {silent=true, desc=description})
+    else
+        vim.keymap.set("i", keymap, origin_key .. "<CR>", {silent=true})
+    end
+end
 vim.keymap.set("n", "<leader>v", function ()
     vim.cmd("vsplit")
     local win = vim.api.nvim_get_current_win()
@@ -19,5 +27,6 @@ end,
 vim.keymap.set("n", ";", ":")
 nmap("<leader>f", ":NvimTreeFocus", "NvimTreeFocus")
 nmap("tt", ":NvimTreeToggle")
+imap("jj", "<Esc>")
 -- vim.keymap.set("n", ";", ":")
 -- vim.keymap.set("n", "<C-f>", ":NvimTreeToggle<CR>")
